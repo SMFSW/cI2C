@@ -6,13 +6,15 @@
 	This example code is in the public domain.
 
 	created Jan 12 2017
-	latest mod Jan 16 2017
+	latest mod Jan 22 2017
 	by SMFSW
 */
 
 #include <ci2c.h>
 
-I2C_SLAVE FRAM;
+const uint8_t blank = 0xEE;		// blank tab filling value for test
+
+I2C_SLAVE FRAM;					// slave declaration
 
 void setup() {
 	Serial.begin(115200);	// start serial for output
@@ -25,9 +27,9 @@ void loop() {
 	uint8_t str[7] = { 0x55, 20, 30, 40, 50, 60, 0xAA };
 	bool match = true;
 	uint8_t str_out[7];
-	memset(&str_out, 0xEE, sizeof(str));
+	memset(&str_out, blank, sizeof(str));
 
-	I2C_write(&FRAM, reg_addr, &str[0], sizeof(str));	// Addr 0, 2bytes Addr size, str, read chars for size of str
+	I2C_write(&FRAM, reg_addr, &str[0], sizeof(str));	// FRAM, Addr 0, str, read chars for size of str
 
 	Serial.println();
 
@@ -35,7 +37,7 @@ void loop() {
 	for (uint8_t i = 0; i < sizeof(str_out); i++)
 	{
 		if (str[i] != str_out[i])	{ match = false; }
-		Serial.print(str_out[i], HEX); // receive a byte as character
+		Serial.print(str_out[i], HEX); // print hex values
 		Serial.print(" ");
 	}
 	Serial.print("WRITE ");

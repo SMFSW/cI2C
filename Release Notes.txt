@@ -1,0 +1,23 @@
+Arduino Hardware I2C for AVR (plain c)
+2017-2017 SMFSW
+
+Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
+	- issues encountered
+	- optimisations
+	- improvements & new functionalities
+
+------------
+
+** Actual:
+v0.3	22 Jan 2017:
+- used function pointer in function parameters for convenience
+- fixed read bug for devices without register address
+- refactored rw booleans with enum instead (implied logic change)
+- I2C_sndAddr function parameters changed
+- added I2C_uninit function to release i2c bus
+- refactoring & optimisations
+- doxygen pass without warnings/errors now
+- examples updated to test more of the library
+
+v0.2	16 Jan 2017:
+- First release
