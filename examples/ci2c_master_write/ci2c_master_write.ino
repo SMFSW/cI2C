@@ -6,7 +6,7 @@
 	This example code is in the public domain.
 
 	created Jan 12 2017
-	latest mod Jan 22 2017
+	latest mod Jan 31 2017
 	by SMFSW
 */
 
@@ -18,7 +18,7 @@ I2C_SLAVE FRAM;					// slave declaration
 
 void setup() {
 	Serial.begin(115200);	// start serial for output
-	I2C_init(I2C_LOW);		// init with low speed (400KHz)
+	I2C_init(I2C_FM);		// init with Fast Mode (400KHz)
 	I2C_slave_init(&FRAM, 0x50, I2C_16B_REG);
 }
 

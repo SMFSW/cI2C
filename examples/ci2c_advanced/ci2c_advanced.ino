@@ -7,7 +7,7 @@
 	This example code is in the public domain.
 
 	created Jan 12 2017
-	latest mod Jan 22 2017
+	latest mod Jan 31 2017
 	by SMFSW
 */
 
@@ -22,7 +22,7 @@ void setup() {
 	memset(&str, blank, sizeof(str));
 
 	Serial.begin(115200);	// start serial for output
-	I2C_init(I2C_LOW);		// init with low speed (400KHz)
+	I2C_init(I2C_FM);		// init with Fast Mode (400KHz)
 	I2C_slave_init(&FRAM, 0x50, I2C_16B_REG);
 	I2C_slave_set_rw_func(&FRAM, I2C_wr_advanced, I2C_WRITE);
 	I2C_slave_set_rw_func(&FRAM, I2C_rd_advanced, I2C_READ);
@@ -72,14 +72,14 @@ bool I2C_wr_advanced(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint1
 	{
 		if (slave->cfg.reg_size >= I2C_16B_REG)	// if size >2, 16bit address is used
 		{
-			if (I2C_snd8((uint8_t) (reg_addr >> 8)) == false)	{ return false; }
+			if (I2C_wr8((uint8_t) (reg_addr >> 8)) == false)	{ return false; }
 		}
-		if (I2C_snd8((uint8_t) reg_addr) == false)				{ return false; }
+		if (I2C_wr8((uint8_t) reg_addr) == false)				{ return false; }
 	}
 
 	for (uint16_t cnt = 0; cnt < bytes; cnt++)
 	{
-		if (I2C_snd8(*(data++)) == false)						{ return false; }
+		if (I2C_wr8(*(data++)) == false)						{ return false; }
 		slave->reg_addr++;
 	}
 
@@ -108,16 +108,16 @@ bool I2C_rd_advanced(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint1
 		if (I2C_sndAddr(slave, I2C_WRITE) == false)					{ return false; }
 		if (slave->cfg.reg_size >= I2C_16B_REG)	// if size >2, 16bit address is used
 		{
-			if (I2C_snd8((uint8_t) (reg_addr >> 8)) == false)		{ return false; }
+			if (I2C_wr8((uint8_t) (reg_addr >> 8)) == false)		{ return false; }
 		}
-		if (I2C_snd8((uint8_t) reg_addr) == false)					{ return false; }
+		if (I2C_wr8((uint8_t) reg_addr) == false)					{ return false; }
 	}
 	if (I2C_start() == false)										{ return false; }
 	if (I2C_sndAddr(slave, I2C_READ) == false)						{ return false; }
 
 	for (uint16_t cnt = 0; cnt < bytes; cnt++)
 	{
-		if (I2C_rcv8((cnt == (bytes - 1)) ? false : true) == false)	{ return false; }
+		if (I2C_rd8((cnt == (bytes - 1)) ? false : true) == false)	{ return false; }
 		*data++ = TWDR;
 		slave->reg_addr++;
 	}
@@ -142,13 +142,13 @@ bool I2C_get_chip_id(I2C_SLAVE * slave, uint8_t * data)
 
 	if (I2C_start() == false)										{ return false; }
 	if (I2C_sndAddr(&FRAM_ID, I2C_WRITE) == false)					{ return false; }
-	if (I2C_snd8(slave->cfg.addr << 1) == false)					{ return false; }
+	if (I2C_wr8(slave->cfg.addr << 1) == false)						{ return false; }
 	if (I2C_start() == false)										{ return false; }
 	if (I2C_sndAddr(&FRAM_ID, I2C_READ) == false)					{ return false; }
 
 	for (uint16_t cnt = 0; cnt < bytes; cnt++)
 	{
-		if (I2C_rcv8((cnt == (bytes - 1)) ? false : true) == false)	{ return false; }
+		if (I2C_rd8((cnt == (bytes - 1)) ? false : true) == false)	{ return false; }
 		*data++ = TWDR;
 	}
 

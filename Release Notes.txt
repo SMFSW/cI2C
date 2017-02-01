@@ -1,6 +1,12 @@
 Arduino Hardware I2C for AVR (plain c)
 2017-2017 SMFSW
 
+- cI2C is set to work on AVR targets only
+	-> for other targets, you may use WireWrapper instead (will be using Wire)
+	-> cI2C & WireWrapper libs declare same structures & functions as seen from the outside
+		(switch between libs without changing anyhting but the include)
+
+
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
 	- optimisations
@@ -9,6 +15,16 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+v0.5	31 Jan 2017:
+- refactored I2C_SPEED enum names for coherence with I2C specifications
+- High Speed mode added in I2C_SPEED enum
+
+v0.4	23 Jan 2017:
+- less inlines (less warnings)
+- inlines put into header (compatibility with WireWrapper)
+- other common code between cI2C and WireWrapper changes
+- README.md updated to tell about WireWrapper library
+
 v0.3	22 Jan 2017:
 - used function pointer in function parameters for convenience
 - fixed read bug for devices without register address

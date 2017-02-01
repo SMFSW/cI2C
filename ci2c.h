@@ -1,12 +1,12 @@
 /*!\file ci2c.h
 ** \author SMFSW
-** \version 0.3
+** \version 0.5
 ** \copyright MIT SMFSW (2017)
 ** \brief arduino i2c in plain c declarations
 **/
 /****************************************************************/
 #ifndef __CI2C_H__
-	#define __CI2C_H__		"v0.3"
+	#define __CI2C_H__		"v0.5"
 /****************************************************************/
 
 #if defined(DOXY)
@@ -47,9 +47,10 @@ typedef enum __attribute__((__packed__)) enI2C_RW {
  *  \attribute packed enum
  */
 typedef enum __attribute__((__packed__)) enI2C_SPEED {
-	I2C_SLOW = 100,		//!< I2C Slow speed (100KHz)
-	I2C_LOW = 400,		//!< I2C Low speed (400KHz)
-	I2C_FAST = 1000		//!< I2C Fast mode (1MHz)
+	I2C_STD = 100,		//!< I2C Standard (100KHz)
+	I2C_FM = 400,		//!< I2C Fast Mode (400KHz)
+	I2C_FMP = 1000,		//!< I2C Fast mode + (1MHz)
+	I2C_HS = 3400		//!< I2C High Speed (3.4MHz)
 } I2C_SPEED;
 
 
@@ -116,42 +117,48 @@ extern void I2C_slave_init(I2C_SLAVE * slave, uint8_t sl_addr, I2C_INT_SIZE reg_
 extern void I2C_slave_set_rw_func(I2C_SLAVE * slave, ci2c_fct_ptr func, I2C_RW rw);
 
 /*! \brief Change I2C slave address
- *  \attribute inline
  *  \param [in, out] slave - pointer to the I2C slave structure to init
  *  \param [in] sl_addr - I2C slave address
  *  \return true if new address set (false if address is >7Fh)
  */
-extern inline bool __attribute__((__always_inline__)) I2C_slave_set_addr(I2C_SLAVE * slave, uint8_t sl_addr);
+extern bool I2C_slave_set_addr(I2C_SLAVE * slave, uint8_t sl_addr);
 
 /*! \brief Change I2C registers map size (for access)
- *  \attribute inline
  *  \param [in, out] slave - pointer to the I2C slave structure
  *  \param [in] reg_sz - internal register map size
  *  \return true if new size is correct (false otherwise and set to 16bit by default)
  */
-extern inline bool __attribute__((__always_inline__)) I2C_slave_set_reg_size(I2C_SLAVE * slave, I2C_INT_SIZE reg_sz);
+extern bool I2C_slave_set_reg_size(I2C_SLAVE * slave, I2C_INT_SIZE reg_sz);
 
 /*! \brief Get I2C slave address
  *  \attribute inline
  *  \param [in] slave - pointer to the I2C slave structure
  *  \return I2C slave address
  */
-extern inline uint8_t __attribute__((__always_inline__)) I2C_slave_get_addr(I2C_SLAVE * slave);
+inline uint8_t __attribute__((__always_inline__)) I2C_slave_get_addr(I2C_SLAVE * slave)
+{
+	return slave->cfg.addr;
+}
 
 /*! \brief Get I2C register map size (for access)
  *  \attribute inline
  *  \param [in] slave - pointer to the I2C slave structure
  *  \return register map using 16bits if true (1Byte otherwise)
  */
-extern inline bool __attribute__((__always_inline__)) I2C_slave_get_reg_size(I2C_SLAVE * slave);
+inline bool __attribute__((__always_inline__)) I2C_slave_get_reg_size(I2C_SLAVE * slave)
+{
+	return slave->cfg.reg_size;
+}
 
 /*! \brief Get I2C current register address (addr may passed this way in procedures if contigous accesses)
  *  \attribute inline
  *  \param [in] slave - pointer to the I2C slave structure
  *  \return current register map address
  */
-extern inline uint16_t __attribute__((__always_inline__)) I2C_slave_get_reg_addr(I2C_SLAVE * slave);
-
+inline uint16_t __attribute__((__always_inline__)) I2C_slave_get_reg_addr(I2C_SLAVE * slave)
+{
+	return slave->reg_addr;
+}
 
 /*************************/
 /*** I2C BUS FUNCTIONS ***/
@@ -188,20 +195,18 @@ extern bool I2C_set_timeout(uint16_t timeout);
 extern bool I2C_set_retries(uint8_t retries);
 
 /*! \brief Get I2C busy status
- *  \attribute inline
  *  \return true if busy
  */
-extern inline bool __attribute__((__always_inline__)) I2C_is_busy(void);
+extern bool I2C_is_busy(void);
 
 /*! \brief This function writes the provided data to the address specified.
- *  \attribute inline
  *  \param [in, out] slave - pointer to the I2C slave structure
  *  \param [in] reg_addr - register address in register map
  *  \param [in] data - pointer to the first byte of a block of data to write
  *  \param [in] bytes - indicates how many bytes of data to write
  *  \return I2C_STATUS status of write attempt
  */
-extern inline I2C_STATUS __attribute__((__always_inline__)) I2C_write(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint16_t bytes);
+extern I2C_STATUS I2C_write(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint16_t bytes);
 
 /*! \brief This inline is a wrapper to I2C_write in case of contigous operations
  *  \attribute inline
@@ -210,19 +215,21 @@ extern inline I2C_STATUS __attribute__((__always_inline__)) I2C_write(I2C_SLAVE 
  *  \param [in] bytes - indicates how many bytes of data to write
  *  \return I2C_STATUS status of write attempt
  */
-extern inline I2C_STATUS __attribute__((__always_inline__)) I2C_write_next(I2C_SLAVE * slave, uint8_t * data, uint16_t bytes);
-
+inline I2C_STATUS __attribute__((__always_inline__)) I2C_write_next(I2C_SLAVE * slave, uint8_t * data, uint16_t bytes)
+{
+	// TODO: implement read next so that it doesn't have to send start register address again
+	return I2C_write(slave, slave->reg_addr, data, bytes);
+}
 
 /*! \brief This function reads data from the address specified and stores this
  *         data in the area provided by the pointer.
- *  \attribute inline
  *  \param [in, out] slave - pointer to the I2C slave structure
  *  \param [in] reg_addr - register address in register map
  *  \param [in, out] data - pointer to the first byte of a block of data to read
  *  \param [in] bytes - indicates how many bytes of data to read
  *  \return I2C_STATUS status of read attempt
  */
-extern inline I2C_STATUS __attribute__((__always_inline__)) I2C_read(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint16_t bytes);
+extern I2C_STATUS I2C_read(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint16_t bytes);
 
 /*! \brief This inline is a wrapper to I2C_read in case of contigous operations
  *  \attribute inline
@@ -231,7 +238,11 @@ extern inline I2C_STATUS __attribute__((__always_inline__)) I2C_read(I2C_SLAVE *
  *  \param [in] bytes - indicates how many bytes of data to read
  *  \return I2C_STATUS status of read attempt
  */
-extern inline I2C_STATUS __attribute__((__always_inline__)) I2C_read_next(I2C_SLAVE * slave, uint8_t * data, uint16_t bytes);
+inline I2C_STATUS __attribute__((__always_inline__)) I2C_read_next(I2C_SLAVE * slave, uint8_t * data, uint16_t bytes)
+{
+	// TODO: implement read next so that it doesn't have to send start register address again
+	return I2C_read(slave, slave->reg_addr, data, bytes);
+}
 
 
 /***********************************/
@@ -254,12 +265,12 @@ extern bool I2C_stop(void);
  *  \param [in] dat - data to be sent
  *  \return true if data sent acknowledged (false otherwise)
  */
-extern bool I2C_snd8(uint8_t dat);
+extern bool I2C_wr8(uint8_t dat);
 /*! \brief Receive byte from bus
  *  \param [in] ack - true if wait for ack
  *  \return true if data reception acknowledged (false otherwise)
  */
-extern uint8_t I2C_rcv8(bool ack);
+extern uint8_t I2C_rd8(bool ack);
 /*! \brief Send I2C address
  *  \param [in] slave - pointer to the I2C slave structure
  *  \param [in] rw - read/write transaction
