@@ -1,6 +1,6 @@
 /*!\file ci2c.c
 ** \author SMFSW
-** \version 0.5
+** \version 0.6
 ** \copyright MIT SMFSW (2017)
 ** \brief arduino master i2c in plain c code
 **/

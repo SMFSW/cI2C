@@ -1,12 +1,12 @@
 /*!\file ci2c.h
 ** \author SMFSW
-** \version 0.5
+** \version 0.6
 ** \copyright MIT SMFSW (2017)
 ** \brief arduino i2c in plain c declarations
 **/
 /****************************************************************/
 #ifndef __CI2C_H__
-	#define __CI2C_H__		"v0.5"
+	#define __CI2C_H__
 /****************************************************************/
 
 #if defined(DOXY)

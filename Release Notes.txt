@@ -15,6 +15,9 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+v0.6	12 Jul 2017:
+- compliance with Arduino v1.5+ IDE source located in src subfolder
+
 v0.5	31 Jan 2017:
 - refactored I2C_SPEED enum names for coherence with I2C specifications
 - High Speed mode added in I2C_SPEED enum
