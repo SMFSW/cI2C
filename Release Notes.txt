@@ -15,6 +15,10 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+v1.0	21 Nov 2017:
+- Added const qualifier for function parameters
+- Return from comm functions if bytes to R/W set to 0
+
 v0.6	12 Jul 2017:
 - compliance with Arduino v1.5+ IDE source located in src subfolder
 

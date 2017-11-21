@@ -7,7 +7,7 @@
 	This example code is in the public domain.
 
 	created Jan 12 2017
-	latest mod Jan 31 2017
+	latest mod Nov 21 2017
 	by SMFSW
 */
 
@@ -24,8 +24,8 @@ void setup() {
 	Serial.begin(115200);	// start serial for output
 	I2C_init(I2C_FM);		// init with Fast Mode (400KHz)
 	I2C_slave_init(&FRAM, 0x50, I2C_16B_REG);
-	I2C_slave_set_rw_func(&FRAM, I2C_wr_advanced, I2C_WRITE);
-	I2C_slave_set_rw_func(&FRAM, I2C_rd_advanced, I2C_READ);
+	I2C_slave_set_rw_func(&FRAM, (ci2c_fct_ptr) I2C_wr_advanced, I2C_WRITE);
+	I2C_slave_set_rw_func(&FRAM, (ci2c_fct_ptr) I2C_rd_advanced, I2C_READ);
 
 	I2C_get_chip_id(&FRAM, &str[0]);
 
@@ -62,8 +62,10 @@ void loop() {
  *  \param [in] bytes - indicates how many bytes of data to write
  *  \return Boolean indicating success/fail of write attempt
  */
-bool I2C_wr_advanced(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint16_t bytes)
+bool I2C_wr_advanced(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data, const uint16_t bytes)
 {
+	if (bytes == 0)	{ return false; }
+
 	slave->reg_addr = reg_addr;
 
 	if (I2C_start() == false)									{ return false; }
@@ -96,11 +98,11 @@ bool I2C_wr_advanced(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint1
  *  \param [in] bytes - indicates how many bytes of data to read
  *  \return Boolean indicating success/fail of read attempt
  */
-bool I2C_rd_advanced(I2C_SLAVE * slave, uint16_t reg_addr, uint8_t * data, uint16_t bytes)
+bool I2C_rd_advanced(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data, const uint16_t bytes)
 {
-	slave->reg_addr = reg_addr;
+	if (bytes == 0)	{ return false; }
 
-	if (bytes == 0)	{ bytes = 1; }
+	slave->reg_addr = reg_addr;
 
 	if (slave->cfg.reg_size)
 	{
