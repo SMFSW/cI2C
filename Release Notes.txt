@@ -15,6 +15,9 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+v1.2	30 Nov 2017:
+- No internal address transmission when reading/writing to next internal address (make sure not to r/w last 16 address right just after init, otherwise make a dummy of address 0 just before)
+
 v1.1	29 Nov 2017:
 - Frequency calculation fix (thanks to TonyWilk)
 - Set Frequency higher than Fast Mode (400KHz) will set bus to Fast Mode (frequency is up to 400KHz on AVR)

@@ -7,7 +7,7 @@
 	This example code is in the public domain.
 
 	created Jan 12 2017
-	latest mod Nov 21 2017
+	latest mod Nov 30 2017
 	by SMFSW
 */
 
@@ -66,12 +66,12 @@ bool I2C_wr_advanced(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data,
 {
 	if (bytes == 0)												{ return false; }
 
-	slave->reg_addr = reg_addr;
-
 	if (I2C_start() == false)									{ return false; }
 	if (I2C_sndAddr(slave, I2C_WRITE) == false)					{ return false; }
-	if (slave->cfg.reg_size)
+	if ((slave->cfg.reg_size) && (reg_addr != slave->reg_addr))	// Don't send address if writing next
 	{
+		slave->reg_addr = reg_addr;
+
 		if (slave->cfg.reg_size >= I2C_16B_REG)	// if size >2, 16bit address is used
 		{
 			if (I2C_wr8((uint8_t) (reg_addr >> 8)) == false)	{ return false; }
@@ -102,10 +102,10 @@ bool I2C_rd_advanced(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data,
 {
 	if (bytes == 0)													{ return false; }
 
-	slave->reg_addr = reg_addr;
-
-	if (slave->cfg.reg_size)
+	if ((slave->cfg.reg_size) && (reg_addr != slave->reg_addr))	// Don't send address if reading next
 	{
+		slave->reg_addr = reg_addr;
+
 		if (I2C_start() == false)									{ return false; }
 		if (I2C_sndAddr(slave, I2C_WRITE) == false)					{ return false; }
 		if (slave->cfg.reg_size >= I2C_16B_REG)	// if size >2, 16bit address is used

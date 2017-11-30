@@ -1,17 +1,13 @@
 /*!\file ci2c.c
 ** \author SMFSW
-** \version 1.1
+** \version 1.2
 ** \copyright MIT SMFSW (2017)
 ** \brief arduino master i2c in plain c code
+** \warning Don't access (r/w) last 16b internal address byte alone right after init, this would lead to hazardous result (in such case, make a dummy read of addr 0 before)
 **/
 
 // TODO: add interrupt vector / callback for it operations (if not too messy)
 // TODO: consider interrupts at least for RX when slave (and TX when master)
-
-// TODO: change contigous r/w operations so it doesn't send internal address again
-
-// TODO: split functions & headers
-
 
 #include "ci2c.h"
 
@@ -69,7 +65,7 @@ void I2C_slave_init(I2C_SLAVE * slave, const uint8_t sl_addr, const I2C_INT_SIZE
 	(void) I2C_slave_set_reg_size(slave, reg_sz);
 	I2C_slave_set_rw_func(slave, (ci2c_fct_ptr) I2C_wr, I2C_WRITE);
 	I2C_slave_set_rw_func(slave, (ci2c_fct_ptr) I2C_rd, I2C_READ);
-	slave->reg_addr = 0;
+	slave->reg_addr = (uint16_t) -1;	// To be sure to send address on first access (warning: unless last 16b byte address is accessed alone)
 	slave->status = I2C_OK;
 }
 
@@ -393,12 +389,12 @@ static bool I2C_wr(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data, c
 {
 	if (bytes == 0)												{ return false; }
 
-	(void) I2C_slave_set_reg_addr(slave, reg_addr);
-
 	if (I2C_start() == false)									{ return false; }
 	if (I2C_sndAddr(slave, I2C_WRITE) == false)					{ return false; }
-	if (slave->cfg.reg_size)
+	if ((slave->cfg.reg_size) && (reg_addr != slave->reg_addr))	// Don't send address if writing next
 	{
+		(void) I2C_slave_set_reg_addr(slave, reg_addr);
+
 		if (slave->cfg.reg_size >= I2C_16B_REG)	// if size >2, 16bit address is used
 		{
 			if (I2C_wr8((uint8_t) (reg_addr >> 8)) == false)	{ return false; }
@@ -429,10 +425,10 @@ static bool I2C_rd(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data, c
 {
 	if (bytes == 0)													{ return false; }
 
-	(void) I2C_slave_set_reg_addr(slave, reg_addr);
-
-	if (slave->cfg.reg_size)	// If start register has to be sent first
+	if ((slave->cfg.reg_size) && (reg_addr != slave->reg_addr))	// Don't send address if reading next
 	{
+		(void) I2C_slave_set_reg_addr(slave, reg_addr);
+
 		if (I2C_start() == false)									{ return false; }
 		if (I2C_sndAddr(slave, I2C_WRITE) == false)					{ return false; }
 		if (slave->cfg.reg_size >= I2C_16B_REG)	// if size >2, 16bit address is used

@@ -1,8 +1,9 @@
 /*!\file ci2c.h
 ** \author SMFSW
-** \version 1.1
+** \version 1.2
 ** \copyright MIT SMFSW (2017)
 ** \brief arduino i2c in plain c declarations
+** \warning Don't access (r/w) last 16b internal address byte alone right after init, this would lead to hazardous result (in such case, make a dummy read of addr 0 before)
 **/
 /****************************************************************/
 #ifndef __CI2C_H__
@@ -212,7 +213,6 @@ I2C_STATUS I2C_write(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data,
 ** \return I2C_STATUS status of write attempt
 **/
 inline I2C_STATUS __attribute__((__always_inline__)) I2C_write_next(I2C_SLAVE * slave, uint8_t * data, const uint16_t bytes) {
-	// TODO: implement read next so that it doesn't have to send start register address again
 	return I2C_write(slave, slave->reg_addr, data, bytes); }
 
 /*!\brief This function reads data from the address specified and stores this
@@ -233,7 +233,6 @@ I2C_STATUS I2C_read(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data, 
 ** \return I2C_STATUS status of read attempt
 **/
 inline I2C_STATUS __attribute__((__always_inline__)) I2C_read_next(I2C_SLAVE * slave, uint8_t * data, const uint16_t bytes) {
-	// TODO: implement read next so that it doesn't have to send start register address again
 	return I2C_read(slave, slave->reg_addr, data, bytes); }
 
 
