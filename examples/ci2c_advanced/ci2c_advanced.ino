@@ -64,7 +64,7 @@ void loop() {
  */
 bool I2C_wr_advanced(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data, const uint16_t bytes)
 {
-	if (bytes == 0)	{ return false; }
+	if (bytes == 0)												{ return false; }
 
 	slave->reg_addr = reg_addr;
 
@@ -100,7 +100,7 @@ bool I2C_wr_advanced(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data,
  */
 bool I2C_rd_advanced(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t * data, const uint16_t bytes)
 {
-	if (bytes == 0)	{ return false; }
+	if (bytes == 0)													{ return false; }
 
 	slave->reg_addr = reg_addr;
 

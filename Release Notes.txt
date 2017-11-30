@@ -15,6 +15,11 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+v1.1	29 Nov 2017:
+- Frequency calculation fix (thanks to TonyWilk)
+- Set Frequency higher than Fast Mode (400KHz) will set bus to Fast Mode (frequency is up to 400KHz on AVR)
+- I2C_set_xxx now returns values applied, not bool
+
 v1.0	21 Nov 2017:
 - Added const qualifier for function parameters
 - Return from comm functions if bytes to R/W set to 0
