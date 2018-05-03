@@ -71,11 +71,11 @@ following examples should work with any I2C EEPROM/FRAM with address 0x50
 
 Doxygen doc can be generated using "Doxyfile".
 
-See [generated documentation](https://smfsw.github.io/cI2C/)
+See [generated documentation](http://smfsw.github.io/cI2C/)
 
 ## Release Notes
 
-See [release notes](https://github.com/SMFSW/cI2C/ReleaseNotes.md)
+See [release notes](http://github.com/SMFSW/cI2C/Release Notes.md)
 
 ## See also
 
