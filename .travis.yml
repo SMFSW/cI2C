@@ -10,8 +10,8 @@ env:
   global:
      - PRETTYNAME="cI2C: Arduino Hardware I2C for AVR (in plain c)"
      - GH_REPO_NAME: cI2C
-#     - GH_REPO_REF: github.com/SMFSW/cI2C.git
-#     - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+     - GH_REPO_REF: github.com/SMFSW/cI2C.git
+     - DOXYFILE: github.com/SMFSW/Doxyfile
 
 before_install:
    - source <(curl -SLs https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/install.sh)
