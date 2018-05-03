@@ -75,7 +75,7 @@ See [generated documentation](https://smfsw.github.io/cI2C/)
 
 ## Release Notes
 
-See [release notes]("https://github.com/SMFSW/cI2C/Release Notes.md")
+See [release notes](https://github.com/SMFSW/cI2C/ReleaseNotes.md)
 
 ## See also
 
