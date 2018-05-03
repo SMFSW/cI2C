@@ -1,6 +1,5 @@
 /*!\file ci2c.h
 ** \author SMFSW
-** \version 1.2
 ** \copyright MIT SMFSW (2017)
 ** \brief arduino i2c in plain c declarations
 ** \warning Don't access (r/w) last 16b internal address byte alone right after init, this would lead to hazardous result (in such case, make a dummy read of addr 0 before)
