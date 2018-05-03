@@ -81,8 +81,6 @@ See [release notes](https://github.com/SMFSW/cI2C/ReleaseNotes.md)
 
 **cI2C**
 * [cI2C github](https://github.com/SMFSW/cI2C) - C implementation of this library
-* https://bitbucket.org/SMFSW/ci2c - C implementation of this library
 
 **WireWrapper**
 * [WireWrapper github](https://github.com/SMFSW/WireWrapper) - Cpp implementation using Wire Wrapper
-* https://bitbucket.org/SMFSW/wirewrapper - Cpp implementation using Wire Wrapper
