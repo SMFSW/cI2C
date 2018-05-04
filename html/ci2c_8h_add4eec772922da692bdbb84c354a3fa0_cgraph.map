@@ -1,0 +1,4 @@
+<map id="I2C_write_next" name="I2C_write_next">
+<area shape="rect" id="node2" href="$ci2c_8h.html#a83adef951ffd9fb5105216f6ee464bb9" title="This function writes the provided data to the address specified. " alt="" coords="166,5,245,32"/>
+<area shape="rect" id="node3" href="$ci2c_8h.html#ad5e4a006f6cea5844a810fab30b40f87" title="This function reads data from the address specified and stores this data in the area provided by the ..." alt="" coords="168,56,243,83"/>
+</map>

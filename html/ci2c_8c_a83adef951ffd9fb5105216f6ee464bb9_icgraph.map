@@ -1,0 +1,5 @@
+<map id="I2C_write" name="I2C_write">
+<area shape="rect" id="node2" href="$ci2c__master__write_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="191,5,238,32"/>
+<area shape="rect" id="node3" href="$ci2c_8h.html#a41be982659cb049fcdf88a18e3e4c4e0" title="Get I2C current register address (addr may passed this way in procedures if contigous accesses) ..." alt="" coords="133,56,296,83"/>
+<area shape="rect" id="node4" href="$ci2c_8h.html#add4eec772922da692bdbb84c354a3fa0" title="This inline is a wrapper to I2C_write in case of contigous operations. " alt="" coords="159,107,270,133"/>
+</map>

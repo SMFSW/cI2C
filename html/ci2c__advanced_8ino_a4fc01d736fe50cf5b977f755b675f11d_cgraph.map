@@ -1,0 +1,17 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node2" href="$ci2c_8c.html#a99283d800332d700deed19f5a37e61d8" title="Enable I2c module on arduino board (including pull&#45;ups, enabling of ACK, and setting clock frequency)..." alt="" coords="140,5,207,32"/>
+<area shape="rect" id="node5" href="$ci2c_8c.html#af93c2e35e06edcea492607b628d5ae1f" title="Init an I2C slave structure for cMI2C communication. " alt="" coords="289,107,394,133"/>
+<area shape="rect" id="node8" href="$ci2c_8c.html#a8d88530833d3685d52ea5486b1316427" title="Redirect slave I2C read/write function (if needed for advanced use) " alt="" coords="447,56,606,83"/>
+<area shape="rect" id="node9" href="$ci2c__advanced_8ino.html#a21e16cd4ec558cb48d7df75c546027a2" title="This procedure calls appropriate functions to perform a proper send transaction on I2C bus..." alt="" coords="110,297,237,324"/>
+<area shape="rect" id="node14" href="$ci2c__advanced_8ino.html#a5d82c84361ed35c102edb0f5e4f677d4" title="This procedure calls appropriate functions to perform a proper receive transaction on I2C bus..." alt="" coords="111,247,235,273"/>
+<area shape="rect" id="node16" href="$ci2c__advanced_8ino.html#ad357f6e59cf5ec94f3ccaa70a20e1b11" title="This procedure calls appropriate functions to get chip ID of FUJITSU devices. " alt="" coords="115,196,231,223"/>
+<area shape="rect" id="node3" href="$ci2c_8c.html#a7c5b1857ae28ade8959a8a06f500ecde" title="Change I2C frequency. " alt="" coords="286,5,397,32"/>
+<area shape="rect" id="node4" href="$ci2c_8c.html#a2c25bc5fdf909b7d45d722970eb04d82" title="I2C bus reset (Release SCL and SDA lines and re&#45;enable module) " alt="" coords="487,5,566,32"/>
+<area shape="rect" id="node6" href="$ci2c_8c.html#ad0eed3132d3284d6f921d13488721226" title="Change I2C slave address. " alt="" coords="457,157,596,184"/>
+<area shape="rect" id="node7" href="$ci2c_8c.html#a47d121773459b24568e5df4f81fbf905" title="Change I2C registers map size (for access) " alt="" coords="445,107,608,133"/>
+<area shape="rect" id="node10" href="$ci2c_8c.html#aaadadbb29f315f2030223665f1988188" title="Send start condition. " alt="" coords="303,259,379,285"/>
+<area shape="rect" id="node11" href="$ci2c_8c.html#aae536cceb33d07e71af9d459a2fc6dc8" title="Send I2C address. " alt="" coords="292,309,391,336"/>
+<area shape="rect" id="node12" href="$ci2c_8c.html#ab20db75dfa22dc47df506cab3bd11c60" title="Send byte on bus. " alt="" coords="306,360,377,387"/>
+<area shape="rect" id="node13" href="$ci2c_8c.html#a53eb804c24e8e86717f7aaebdab1aa53" title="Send stop condition. " alt="" coords="304,208,379,235"/>
+<area shape="rect" id="node15" href="$ci2c_8c.html#a8d6d7eb118ea1505df039075a00c267b" title="Receive byte from bus. " alt="" coords="307,157,375,184"/>
+</map>

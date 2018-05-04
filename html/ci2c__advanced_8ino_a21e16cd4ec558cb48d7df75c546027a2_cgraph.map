@@ -1,0 +1,6 @@
+<map id="I2C_wr_advanced" name="I2C_wr_advanced">
+<area shape="rect" id="node2" href="$ci2c_8c.html#aaadadbb29f315f2030223665f1988188" title="Send start condition. " alt="" coords="193,5,269,32"/>
+<area shape="rect" id="node3" href="$ci2c_8c.html#aae536cceb33d07e71af9d459a2fc6dc8" title="Send I2C address. " alt="" coords="181,56,280,83"/>
+<area shape="rect" id="node4" href="$ci2c_8c.html#ab20db75dfa22dc47df506cab3bd11c60" title="Send byte on bus. " alt="" coords="195,107,266,133"/>
+<area shape="rect" id="node5" href="$ci2c_8c.html#a53eb804c24e8e86717f7aaebdab1aa53" title="Send stop condition. " alt="" coords="193,157,268,184"/>
+</map>

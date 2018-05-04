@@ -1,0 +1,11 @@
+<map id="I2C_get_chip_id" name="I2C_get_chip_id">
+<area shape="rect" id="node2" href="$ci2c_8c.html#af93c2e35e06edcea492607b628d5ae1f" title="Init an I2C slave structure for cMI2C communication. " alt="" coords="171,56,277,83"/>
+<area shape="rect" id="node6" href="$ci2c_8c.html#aaadadbb29f315f2030223665f1988188" title="Send start condition. " alt="" coords="186,107,262,133"/>
+<area shape="rect" id="node7" href="$ci2c_8c.html#aae536cceb33d07e71af9d459a2fc6dc8" title="Send I2C address. " alt="" coords="175,157,273,184"/>
+<area shape="rect" id="node8" href="$ci2c_8c.html#ab20db75dfa22dc47df506cab3bd11c60" title="Send byte on bus. " alt="" coords="189,208,259,235"/>
+<area shape="rect" id="node9" href="$ci2c_8c.html#a8d6d7eb118ea1505df039075a00c267b" title="Receive byte from bus. " alt="" coords="190,259,258,285"/>
+<area shape="rect" id="node10" href="$ci2c_8c.html#a53eb804c24e8e86717f7aaebdab1aa53" title="Send stop condition. " alt="" coords="187,309,261,336"/>
+<area shape="rect" id="node3" href="$ci2c_8c.html#ad0eed3132d3284d6f921d13488721226" title="Change I2C slave address. " alt="" coords="337,5,476,32"/>
+<area shape="rect" id="node4" href="$ci2c_8c.html#a47d121773459b24568e5df4f81fbf905" title="Change I2C registers map size (for access) " alt="" coords="325,56,488,83"/>
+<area shape="rect" id="node5" href="$ci2c_8c.html#a8d88530833d3685d52ea5486b1316427" title="Redirect slave I2C read/write function (if needed for advanced use) " alt="" coords="327,107,486,133"/>
+</map>

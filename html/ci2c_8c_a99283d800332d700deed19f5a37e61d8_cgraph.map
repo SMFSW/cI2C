@@ -1,0 +1,4 @@
+<map id="I2C_init" name="I2C_init">
+<area shape="rect" id="node2" href="$ci2c_8c.html#a7c5b1857ae28ade8959a8a06f500ecde" title="Change I2C frequency. " alt="" coords="121,5,231,32"/>
+<area shape="rect" id="node3" href="$ci2c_8c.html#a2c25bc5fdf909b7d45d722970eb04d82" title="I2C bus reset (Release SCL and SDA lines and re&#45;enable module) " alt="" coords="281,5,359,32"/>
+</map>

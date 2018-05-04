@@ -1,0 +1,8 @@
+<map id="I2C_reset" name="I2C_reset">
+<area shape="rect" id="node2" href="$ci2c_8h.html#a7c5b1857ae28ade8959a8a06f500ecde" title="Change I2C frequency. " alt="" coords="134,56,245,83"/>
+<area shape="rect" id="node6" href="$ci2c_8h.html#afc15fc625892e1e50e831d7934073299" title="This inline is a wrapper to I2C_read in case of contigous operations. " alt="" coords="136,107,243,133"/>
+<area shape="rect" id="node3" href="$ci2c_8h.html#a99283d800332d700deed19f5a37e61d8" title="Enable I2c module on arduino board (including pull&#45;ups, enabling of ACK, and setting clock frequency)..." alt="" coords="293,5,360,32"/>
+<area shape="rect" id="node5" href="$ci2c_8h.html#a41be982659cb049fcdf88a18e3e4c4e0" title="Get I2C current register address (addr may passed this way in procedures if contigous accesses) ..." alt="" coords="408,56,571,83"/>
+<area shape="rect" id="node4" href="$ci2c__advanced_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="462,5,517,32"/>
+<area shape="rect" id="node7" href="$ci2c__master__read_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="303,107,350,133"/>
+</map>

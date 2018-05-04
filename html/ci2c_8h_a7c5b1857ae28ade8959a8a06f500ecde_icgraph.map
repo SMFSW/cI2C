@@ -1,0 +1,5 @@
+<map id="I2C_set_speed" name="I2C_set_speed">
+<area shape="rect" id="node2" href="$ci2c_8h.html#a99283d800332d700deed19f5a37e61d8" title="Enable I2c module on arduino board (including pull&#45;ups, enabling of ACK, and setting clock frequency)..." alt="" coords="165,5,232,32"/>
+<area shape="rect" id="node4" href="$ci2c_8h.html#a41be982659cb049fcdf88a18e3e4c4e0" title="Get I2C current register address (addr may passed this way in procedures if contigous accesses) ..." alt="" coords="280,56,443,83"/>
+<area shape="rect" id="node3" href="$ci2c__advanced_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="334,5,389,32"/>
+</map>

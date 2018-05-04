@@ -1,0 +1,8 @@
+<map id="I2C_start" name="I2C_start">
+<area shape="rect" id="node2" href="$ci2c__advanced_8ino.html#a21e16cd4ec558cb48d7df75c546027a2" title="This procedure calls appropriate functions to perform a proper send transaction on I2C bus..." alt="" coords="131,5,258,32"/>
+<area shape="rect" id="node4" href="$ci2c__advanced_8ino.html#a5d82c84361ed35c102edb0f5e4f677d4" title="This procedure calls appropriate functions to perform a proper receive transaction on I2C bus..." alt="" coords="133,56,257,83"/>
+<area shape="rect" id="node5" href="$ci2c__advanced_8ino.html#ad357f6e59cf5ec94f3ccaa70a20e1b11" title="This procedure calls appropriate functions to get chip ID of FUJITSU devices. " alt="" coords="137,107,253,133"/>
+<area shape="rect" id="node6" href="$ci2c_8h.html#afc15fc625892e1e50e831d7934073299" title="This inline is a wrapper to I2C_read in case of contigous operations. " alt="" coords="141,157,248,184"/>
+<area shape="rect" id="node3" href="$ci2c__advanced_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="307,56,362,83"/>
+<area shape="rect" id="node7" href="$ci2c__master__read_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="311,157,358,184"/>
+</map>

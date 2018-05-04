@@ -1,0 +1,11 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node2" href="$ci2c_8c.html#ad5e4a006f6cea5844a810fab30b40f87" title="This function reads data from the address specified and stores this data in the area provided by the ..." alt="" coords="117,107,192,133"/>
+<area shape="rect" id="node3" href="$ci2c_8h.html#afc15fc625892e1e50e831d7934073299" title="This inline is a wrapper to I2C_read in case of contigous operations. " alt="" coords="101,157,208,184"/>
+<area shape="rect" id="node4" href="$ci2c_8h.html#ad5e4a006f6cea5844a810fab30b40f87" title="This function reads data from the address specified and stores this data in the area provided by the ..." alt="" coords="268,5,343,32"/>
+<area shape="rect" id="node5" href="$ci2c_8h.html#a2c25bc5fdf909b7d45d722970eb04d82" title="I2C bus reset (Release SCL and SDA lines and re&#45;enable module) " alt="" coords="266,56,345,83"/>
+<area shape="rect" id="node6" href="$ci2c_8h.html#aaadadbb29f315f2030223665f1988188" title="Send start condition. " alt="" coords="267,107,343,133"/>
+<area shape="rect" id="node7" href="$ci2c_8h.html#a53eb804c24e8e86717f7aaebdab1aa53" title="Send stop condition. " alt="" coords="268,157,343,184"/>
+<area shape="rect" id="node8" href="$ci2c_8h.html#ab20db75dfa22dc47df506cab3bd11c60" title="Send byte on bus. " alt="" coords="270,208,341,235"/>
+<area shape="rect" id="node9" href="$ci2c_8h.html#a8d6d7eb118ea1505df039075a00c267b" title="Receive byte from bus. " alt="" coords="271,259,339,285"/>
+<area shape="rect" id="node10" href="$ci2c_8h.html#aae536cceb33d07e71af9d459a2fc6dc8" title="Send I2C address. " alt="" coords="256,309,355,336"/>
+</map>

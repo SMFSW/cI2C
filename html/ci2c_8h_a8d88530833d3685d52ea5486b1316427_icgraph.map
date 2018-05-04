@@ -1,0 +1,5 @@
+<map id="I2C_slave_set_rw_func" name="I2C_slave_set_rw_func">
+<area shape="rect" id="node2" href="$ci2c__advanced_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="534,31,589,57"/>
+<area shape="rect" id="node3" href="$ci2c_8h.html#af93c2e35e06edcea492607b628d5ae1f" title="Init an I2C slave structure for cMI2C communication. " alt="" coords="214,31,319,57"/>
+<area shape="rect" id="node4" href="$ci2c__advanced_8ino.html#ad357f6e59cf5ec94f3ccaa70a20e1b11" title="This procedure calls appropriate functions to get chip ID of FUJITSU devices. " alt="" coords="369,81,485,108"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node2" href="$ci2c_8c.html#a99283d800332d700deed19f5a37e61d8" title="Enable I2c module on arduino board (including pull&#45;ups, enabling of ACK, and setting clock frequency)..." alt="" coords="129,19,196,45"/>
+<area shape="rect" id="node5" href="$ci2c_8c.html#af93c2e35e06edcea492607b628d5ae1f" title="Init an I2C slave structure for cMI2C communication. " alt="" coords="110,95,215,121"/>
+<area shape="rect" id="node3" href="$ci2c_8c.html#a7c5b1857ae28ade8959a8a06f500ecde" title="Change I2C frequency. " alt="" coords="290,5,401,32"/>
+<area shape="rect" id="node4" href="$ci2c_8c.html#a2c25bc5fdf909b7d45d722970eb04d82" title="I2C bus reset (Release SCL and SDA lines and re&#45;enable module) " alt="" coords="475,5,554,32"/>
+<area shape="rect" id="node6" href="$ci2c_8c.html#ad0eed3132d3284d6f921d13488721226" title="Change I2C slave address. " alt="" coords="276,56,415,83"/>
+<area shape="rect" id="node7" href="$ci2c_8c.html#a47d121773459b24568e5df4f81fbf905" title="Change I2C registers map size (for access) " alt="" coords="264,107,427,133"/>
+<area shape="rect" id="node8" href="$ci2c_8c.html#a8d88530833d3685d52ea5486b1316427" title="Redirect slave I2C read/write function (if needed for advanced use) " alt="" coords="266,157,425,184"/>
+</map>

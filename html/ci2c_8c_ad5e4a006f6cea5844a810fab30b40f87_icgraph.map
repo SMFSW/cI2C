@@ -1,0 +1,6 @@
+<map id="I2C_read" name="I2C_read">
+<area shape="rect" id="node2" href="$ci2c__advanced_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="161,5,207,32"/>
+<area shape="rect" id="node3" href="$ci2c_8h.html#add4eec772922da692bdbb84c354a3fa0" title="This inline is a wrapper to I2C_write in case of contigous operations. " alt="" coords="129,56,239,83"/>
+<area shape="rect" id="node4" href="$ci2c_8h.html#afc15fc625892e1e50e831d7934073299" title="This inline is a wrapper to I2C_read in case of contigous operations. " alt="" coords="131,107,237,133"/>
+<area shape="rect" id="node5" href="$ci2c__master__read_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="289,107,335,133"/>
+</map>
