@@ -1,0 +1,14 @@
+digraph "I2C_set_speed"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node45 [label="I2C_set_speed",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node45 -> Node46 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 [label="I2C_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#a99283d800332d700deed19f5a37e61d8",tooltip="Enable I2c module on arduino board (including pull-ups, enabling of ACK, and setting clock frequency)..."];
+  Node46 -> Node47 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node47 [label="setup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c__advanced_8ino.html#a4fc01d736fe50cf5b977f755b675f11d"];
+  Node46 -> Node48 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="I2C_slave_get_reg_addr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#a41be982659cb049fcdf88a18e3e4c4e0",tooltip="Get I2C current register address (addr may passed this way in procedures if contigous accesses) ..."];
+  Node45 -> Node48 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

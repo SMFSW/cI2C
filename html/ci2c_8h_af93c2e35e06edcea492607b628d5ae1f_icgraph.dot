@@ -1,0 +1,12 @@
+digraph "I2C_slave_init"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node71 [label="I2C_slave_init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node71 -> Node72 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node72 [label="setup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c__advanced_8ino.html#a4fc01d736fe50cf5b977f755b675f11d"];
+  Node71 -> Node73 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node73 [label="I2C_get_chip_id",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c__advanced_8ino.html#ad357f6e59cf5ec94f3ccaa70a20e1b11",tooltip="This procedure calls appropriate functions to get chip ID of FUJITSU devices. "];
+  Node73 -> Node72 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

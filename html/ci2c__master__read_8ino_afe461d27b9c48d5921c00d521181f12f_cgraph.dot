@@ -1,0 +1,25 @@
+digraph "loop"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="loop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="I2C_read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#ad5e4a006f6cea5844a810fab30b40f87",tooltip="This function reads data from the address specified and stores this data in the area provided by the ..."];
+  Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="I2C_read_next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#afc15fc625892e1e50e831d7934073299",tooltip="This inline is a wrapper to I2C_read in case of contigous operations. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="I2C_read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#ad5e4a006f6cea5844a810fab30b40f87",tooltip="This function reads data from the address specified and stores this data in the area provided by the ..."];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="I2C_reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#a2c25bc5fdf909b7d45d722970eb04d82",tooltip="I2C bus reset (Release SCL and SDA lines and re-enable module) "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="I2C_start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#aaadadbb29f315f2030223665f1988188",tooltip="Send start condition. "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="I2C_stop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#a53eb804c24e8e86717f7aaebdab1aa53",tooltip="Send stop condition. "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="I2C_wr8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#ab20db75dfa22dc47df506cab3bd11c60",tooltip="Send byte on bus. "];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="I2C_rd8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#a8d6d7eb118ea1505df039075a00c267b",tooltip="Receive byte from bus. "];
+  Node2 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="I2C_sndAddr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8h.html#aae536cceb33d07e71af9d459a2fc6dc8",tooltip="Send I2C address. "];
+}

@@ -1,0 +1,21 @@
+digraph "setup"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node4 [label="setup",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="I2C_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a99283d800332d700deed19f5a37e61d8",tooltip="Enable I2c module on arduino board (including pull-ups, enabling of ACK, and setting clock frequency)..."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="I2C_set_speed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a7c5b1857ae28ade8959a8a06f500ecde",tooltip="Change I2C frequency. "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="I2C_reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a2c25bc5fdf909b7d45d722970eb04d82",tooltip="I2C bus reset (Release SCL and SDA lines and re-enable module) "];
+  Node4 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="I2C_slave_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#af93c2e35e06edcea492607b628d5ae1f",tooltip="Init an I2C slave structure for cMI2C communication. "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="I2C_slave_set_addr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#ad0eed3132d3284d6f921d13488721226",tooltip="Change I2C slave address. "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="I2C_slave_set_reg_size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a47d121773459b24568e5df4f81fbf905",tooltip="Change I2C registers map size (for access) "];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="I2C_slave_set_rw_func",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a8d88530833d3685d52ea5486b1316427",tooltip="Redirect slave I2C read/write function (if needed for advanced use) "];
+}

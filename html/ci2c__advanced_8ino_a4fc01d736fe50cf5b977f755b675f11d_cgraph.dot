@@ -1,0 +1,48 @@
+digraph "setup"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node30 [label="setup",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node30 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="I2C_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a99283d800332d700deed19f5a37e61d8",tooltip="Enable I2c module on arduino board (including pull-ups, enabling of ACK, and setting clock frequency)..."];
+  Node31 -> Node32 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node32 [label="I2C_set_speed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a7c5b1857ae28ade8959a8a06f500ecde",tooltip="Change I2C frequency. "];
+  Node32 -> Node33 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node33 [label="I2C_reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a2c25bc5fdf909b7d45d722970eb04d82",tooltip="I2C bus reset (Release SCL and SDA lines and re-enable module) "];
+  Node30 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node34 [label="I2C_slave_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#af93c2e35e06edcea492607b628d5ae1f",tooltip="Init an I2C slave structure for cMI2C communication. "];
+  Node34 -> Node35 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node35 [label="I2C_slave_set_addr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#ad0eed3132d3284d6f921d13488721226",tooltip="Change I2C slave address. "];
+  Node34 -> Node36 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node36 [label="I2C_slave_set_reg_size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a47d121773459b24568e5df4f81fbf905",tooltip="Change I2C registers map size (for access) "];
+  Node34 -> Node37 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node37 [label="I2C_slave_set_rw_func",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a8d88530833d3685d52ea5486b1316427",tooltip="Redirect slave I2C read/write function (if needed for advanced use) "];
+  Node30 -> Node37 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 -> Node38 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node38 [label="I2C_wr_advanced",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c__advanced_8ino.html#a21e16cd4ec558cb48d7df75c546027a2",tooltip="This procedure calls appropriate functions to perform a proper send transaction on I2C bus..."];
+  Node38 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node39 [label="I2C_start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#aaadadbb29f315f2030223665f1988188",tooltip="Send start condition. "];
+  Node38 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node40 [label="I2C_sndAddr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#aae536cceb33d07e71af9d459a2fc6dc8",tooltip="Send I2C address. "];
+  Node38 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 [label="I2C_wr8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#ab20db75dfa22dc47df506cab3bd11c60",tooltip="Send byte on bus. "];
+  Node38 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node42 [label="I2C_stop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a53eb804c24e8e86717f7aaebdab1aa53",tooltip="Send stop condition. "];
+  Node30 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 [label="I2C_rd_advanced",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c__advanced_8ino.html#a5d82c84361ed35c102edb0f5e4f677d4",tooltip="This procedure calls appropriate functions to perform a proper receive transaction on I2C bus..."];
+  Node43 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node44 [label="I2C_rd8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c_8c.html#a8d6d7eb118ea1505df039075a00c267b",tooltip="Receive byte from bus. "];
+  Node43 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 -> Node45 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 [label="I2C_get_chip_id",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ci2c__advanced_8ino.html#ad357f6e59cf5ec94f3ccaa70a20e1b11",tooltip="This procedure calls appropriate functions to get chip ID of FUJITSU devices. "];
+  Node45 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
