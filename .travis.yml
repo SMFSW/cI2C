@@ -1,6 +1,11 @@
 language: c
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - graphviz
+
 # Blacklist
 branches:
   except:
@@ -11,7 +16,7 @@ env:
      - PRETTYNAME="cI2C: Arduino Hardware I2C for AVR (in plain c)"
      - GH_REPO_NAME: cI2C
      - GH_REPO_REF: github.com/SMFSW/cI2C.git
-     - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+     - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile.auto
 
 before_install:
    - source <(curl -SLs https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/install.sh)
