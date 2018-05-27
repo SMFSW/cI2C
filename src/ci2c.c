@@ -1,6 +1,6 @@
 /*!\file ci2c.c
 ** \author SMFSW
-** \copyright MIT SMFSW (2017)
+** \copyright MIT SMFSW (2017-2018)
 ** \brief arduino master i2c in plain c code
 ** \warning Don't access (r/w) last 16b internal address byte alone right after init, this would lead to hazardous result (in such case, make a dummy read of addr 0 before)
 **/
@@ -232,7 +232,7 @@ static I2C_STATUS I2C_comm(I2C_SLAVE * slave, const uint16_t reg_addr, uint8_t *
 	ack = fc(slave, reg_addr, data, bytes);
 	while ((!ack) && (retry != 0))	// If com not successful, retry some more times
 	{
-		delay(5);
+		delay(1);
 		ack = fc(slave, reg_addr, data, bytes);
 		retry--;
 	}

@@ -15,7 +15,8 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
-v1.3	3 May 2018:
+v1.3	13 May 2018:
+- Delay between retries is now 1ms
 - Adding support for unit tests and doxygen documentation generation with Travis CI
 - Updated README.md
 
