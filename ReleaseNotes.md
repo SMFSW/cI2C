@@ -4,12 +4,12 @@ Arduino Hardware I2C for AVR (plain c)
 - cI2C is set to work on AVR targets only
 	-> for other targets, you may use WireWrapper instead (will be using Wire)
 	-> cI2C & WireWrapper libs declare same structures & functions as seen from the outside
-		(switch between libs without changing anyhting but the include)
+		(switch between libs without changing anything but the include)
 
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
-	- optimisations
+	- optimizations
 	- improvements & new functionalities
 
 ------------
