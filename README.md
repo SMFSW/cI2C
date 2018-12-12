@@ -1,4 +1,4 @@
-# cI2C [![Build Status](https://travis-ci.org/SMFSW/cI2C.svg?branch=master)](https://travis-ci.org/SMFSW/cI2C)
+# cI2C [![Build Status](https://travis-ci.com/SMFSW/cI2C.svg?branch=master)](https://travis-ci.com/SMFSW/cI2C)
 
 Arduino Hardware I2C for AVR (plain c)
 
