@@ -1,4 +1,4 @@
-# cI2C
+# cI2C [![CodeFactor](https://www.codefactor.io/repository/github/smfsw/ci2c/badge)](https://www.codefactor.io/repository/github/smfsw/ci2c)
 
 Arduino Hardware I2C for AVR (plain c)
 
