@@ -1,4 +1,14 @@
-# cI2C [![CodeFactor](https://www.codefactor.io/repository/github/smfsw/ci2c/badge)](https://www.codefactor.io/repository/github/smfsw/ci2c)
+# cI2C
+
+[![author](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/auth_SMFSW.json)](https://github.com/SMFSW)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/cI2C_status_badge.json)
+[![license](https://img.shields.io/badge/License-MIT-darkred.svg)](LICENSE)
+[![CodeFactor](https://www.codefactor.io/repository/github/smfsw/ci2c/badge)](https://www.codefactor.io/repository/github/smfsw/ci2c)
+
+![platform](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/platform_INO.json)
+
+[![doxy](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/tool_DOXY.json)](https://smfsw.github.io/cI2C)
+[![re_note](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/tool_RN.json)](ReleaseNotes.md)
 
 Arduino Hardware I2C for AVR (plain c)
 
@@ -66,16 +76,6 @@ following examples should work with any I2C EEPROM/FRAM with address 0x50
 * [ci2c_master_write.ino](examples/ci2c_master_write/ci2c_master_write.ino): Write some bytes to FRAM and compare them with what's read afterwards
 * [ci2c_master_read.ino](examples/ci2c_master_read/ci2c_master_read.ino): Read some bytes in FRAM
 * [ci2c_advanced.ino](examples/ci2c_advanced/ci2c_advanced.ino): Redirecting slave write & read functions (to custom functions following typedef)
-
-## Documentation
-
-Doxygen doc can be generated using "Doxyfile".
-
-See [generated documentation](https://smfsw.github.io/cI2C/)
-
-## Release Notes
-
-See [release notes](ReleaseNotes.md)
 
 ## See also
 
